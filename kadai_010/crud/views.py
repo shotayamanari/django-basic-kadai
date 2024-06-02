@@ -25,6 +25,7 @@ class ProductDeleteView(DeleteView):
     model = Product
     success_url = reverse_lazy('list')
 
-class ProductDetailView(ListView):
+class ProductDetailView(DeleteView):
     model = Product
+    fields = '__all__'
     template_name_suffix = '_detail'
